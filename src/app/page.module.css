@@ -100,6 +100,7 @@
   width: 100%;
   padding-inline: var(--page-pad-x);
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .heroLeft {
@@ -284,9 +285,13 @@
   min-height: 0;
   padding: 2.85rem 0 3rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.5s forwards;
+  /* Fill cream gutter to the right of the centered hero (viewport edge) */
+  margin-right: calc(-1 * (max(0px, (100vw - var(--content-max)) / 2) + var(--page-pad-x)));
+  padding-right: calc(max(0px, (100vw - var(--content-max)) / 2) + var(--page-pad-x));
+  border-radius: 22px 0 0 22px;
 }
 
 .heroRightInner {
