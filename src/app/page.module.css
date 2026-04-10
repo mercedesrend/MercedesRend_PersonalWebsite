@@ -364,9 +364,9 @@
 }
 
 .heroQuote {
-  --quote-orange-w: min(28%, 5.25rem);
+  --quote-accent-w: 6px;
   margin: 0;
-  padding: 1.3rem calc(1.15rem + var(--quote-orange-w)) 1.3rem 1.3rem;
+  padding: 1.25rem 1.25rem 1.25rem calc(var(--quote-accent-w) + 1.15rem);
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -376,16 +376,16 @@
   position: relative;
 }
 
-/* Right-edge orange (use ::after so nothing can override as a left bar) */
-.heroQuote::after {
+/* Full-height left accent: flush top–bottom with the card (padding box), follows corner radius */
+.heroQuote::before {
   content: "";
   position: absolute;
+  left: 0;
   top: 0;
-  right: 0;
   bottom: 0;
-  width: var(--quote-orange-w);
+  width: var(--quote-accent-w);
   background: var(--accent);
-  border-radius: 18px 11px 11px 18px;
+  border-radius: 12px 0 0 12px;
   z-index: 0;
   pointer-events: none;
 }
