@@ -342,13 +342,26 @@
 
 .heroQuote {
   margin: 0;
-  padding: 1.25rem 1.25rem 1.25rem 1.35rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.45rem;
   background: var(--warm-white);
   border: 0.5px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 10px;
+  border-radius: 12px;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Rounded orange accent (border-left stays square on curved boxes) */
+.heroQuote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 12px 0 0 12px;
 }
 
 .heroQuote p {
