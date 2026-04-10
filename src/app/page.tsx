@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { DM_Sans, Lora } from "next/font/google";
 import styles from "./page.module.css";
 
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
   title: "Mercedes Rend",
   description:
     "Personal website for Mercedes Rend, a Johns Hopkins biomedical engineering student building AI systems for educational equity, college access, and student opportunity.",
+  openGraph: {
+    images: [{ url: "/mercedes-rend-headshot.png", width: 961, height: 1024, alt: "Mercedes Rend" }],
+  },
 };
 
 type Project = {
@@ -335,12 +339,27 @@ export default function Page() {
 
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
-          <span className={styles.heroTag}>Educational Equity · Founder · Advisor · Builder</span>
-          <h1 className={styles.heroName}>
-            Mercedes
-            <br />
-            <em>Rend</em>
-          </h1>
+          <div className={styles.heroTop}>
+            <div className={styles.headshotFrame}>
+              <Image
+                src="/mercedes-rend-headshot.png"
+                alt="Mercedes Rend"
+                width={961}
+                height={1024}
+                className={styles.headshotImage}
+                priority
+                sizes="(max-width: 768px) 160px, 200px"
+              />
+            </div>
+            <div className={styles.heroTitleBlock}>
+              <span className={styles.heroTag}>Educational Equity · Founder · Advisor · Builder</span>
+              <h1 className={styles.heroName}>
+                Mercedes
+                <br />
+                <em>Rend</em>
+              </h1>
+            </div>
+          </div>
           <p className={styles.heroBio}>
             I build AI tools for educational equity: products that help first-gen and
             underserved students navigate college access with the kind of support that is
