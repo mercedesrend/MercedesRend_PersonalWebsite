@@ -89,10 +89,10 @@
 
 .hero {
   min-height: min(100dvh, 52rem);
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  grid-template-rows: minmax(0, 1fr);
+  display: flex;
+  flex-direction: row;
   align-items: stretch;
+  gap: 2rem;
   padding-top: 4.65rem;
   padding-bottom: 2.75rem;
   max-width: var(--content-max);
@@ -100,7 +100,6 @@
   width: 100%;
   padding-inline: var(--page-pad-x);
   box-sizing: border-box;
-  column-gap: 2rem;
 }
 
 .heroLeft {
@@ -108,8 +107,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  flex: 1.05 1 0;
+  min-width: 0;
   padding: 2.85rem 0 3rem;
-  width: 100%;
   max-width: 760px;
 }
 
@@ -279,7 +279,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  align-self: stretch;
+  flex: 0.95 1 0;
+  min-width: 0;
   min-height: 0;
   padding: 2.85rem 0 3rem;
   position: relative;
@@ -369,7 +370,7 @@
 .heroQuote {
   --quote-accent-w: 6px;
   margin: 0;
-  padding: 1.25rem calc(1.2rem + var(--quote-accent-w)) 1.25rem 1.25rem;
+  padding: 1.25rem 1.25rem 1.25rem calc(1.2rem + var(--quote-accent-w));
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -379,14 +380,16 @@
   position: relative;
 }
 
-/* Right accent: full card height (top→bottom), matches card’s right corners */
-.heroQuote::after {
+/* Left accent: full height of the quote card, matches card corners */
+.heroQuote::before {
   content: "";
   position: absolute;
-  inset: 0 0 0 auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: var(--quote-accent-w);
   background: var(--accent);
-  border-radius: 0 12px 12px 0;
+  border-radius: 12px 0 0 12px;
   z-index: 0;
   pointer-events: none;
 }
@@ -1107,7 +1110,7 @@
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .heroLeft,
