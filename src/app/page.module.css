@@ -582,34 +582,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  padding: 2.75rem 3rem;
-  background: var(--ink);
-  border: 0.5px solid rgb(255 255 255 / 12%);
-  border-radius: 0;
-  box-shadow: none;
+  padding: 2.75rem;
+  background: var(--warm-white);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
   align-items: start;
-  /* Span section horizontal padding so the dark panel aligns with full content width */
-  margin-left: -3rem;
-  margin-right: -3rem;
-  width: calc(100% + 6rem);
-  max-width: none;
-}
-
-.featuredProject .projectName {
-  color: var(--cream);
-}
-
-.featuredProject .projectDesc {
-  color: rgb(253 252 250 / 65%);
-}
-
-.featuredProject .pill {
-  border-color: rgb(255 255 255 / 15%);
-  color: rgb(253 252 250 / 50%);
-}
-
-.featuredProject .projectArrow {
-  color: rgb(253 252 250 / 30%);
 }
 
 .projectTag {
@@ -1129,11 +1106,7 @@
 
   .featuredProject {
     grid-column: auto;
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    width: calc(100% + 3rem);
-    padding: 2rem 1.5rem;
-    max-width: none;
+    padding: 2rem;
   }
 
   .contactLinks {
