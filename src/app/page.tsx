@@ -604,18 +604,12 @@ export default function Page() {
           {skills.map((skillGroup) => (
             <div key={skillGroup.group} className={styles.skillLane}>
               <div className={styles.skillLaneLabel}>{skillGroup.group}</div>
-              <div className={styles.skillTrackViewport}>
-                <div
-                  className={`${styles.skillTrack} ${
-                    skillGroup.group === "Frameworks & Tools" ? styles.skillTrackReverse : ""
-                  }`}
-                >
-                  {[...skillGroup.items, ...skillGroup.items].map((skill, index) => (
-                    <span key={`${skillGroup.group}-${skill}-${index}`} className={styles.skillTag}>
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className={styles.skillTagsRow}>
+                {skillGroup.items.map((skill) => (
+                  <span key={skill} className={styles.skillTag}>
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
