@@ -100,7 +100,6 @@
   padding-inline: var(--page-pad-x);
   box-sizing: border-box;
   column-gap: 2rem;
-  overflow: visible;
 }
 
 .heroLeft {
@@ -281,14 +280,9 @@
   align-items: center;
   padding: 2.85rem 0 3rem;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.5s forwards;
-  /* Bleed peach panel to the viewport on the right; round only the inner (left) edge */
-  border-radius: 22px 0 0 22px;
-  margin-right: calc(-1 * (max(0px, (100vw - var(--content-max)) / 2) + var(--page-pad-x)));
-  padding-right: calc(max(0px, (100vw - var(--content-max)) / 2) + var(--page-pad-x));
-  box-sizing: border-box;
 }
 
 .heroRightInner {
@@ -304,13 +298,12 @@
 .heroRight::before {
   content: "";
   position: absolute;
-  top: -48px;
-  right: 0;
-  width: min(320px, 55vw);
-  height: min(320px, 55vw);
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
   border-radius: 999px;
-  background: rgb(196 98 45 / 10%);
-  pointer-events: none;
+  background: rgb(196 98 45 / 8%);
 }
 
 .heroStats {
@@ -371,8 +364,9 @@
 }
 
 .heroQuote {
+  --quote-orange-w: min(30%, 5.75rem);
   margin: 0;
-  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  padding: 1.3rem calc(1.2rem + var(--quote-orange-w)) 1.3rem 1.35rem;
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -382,16 +376,17 @@
   position: relative;
 }
 
-/* Quote: slim left accent only — main orange lives in the right hero panel */
+/* Orange only on the right: full height, flush to card edge, rounded toward the text */
 .heroQuote::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 0;
+  right: 0;
   bottom: 0;
-  width: 5px;
+  left: auto;
+  width: var(--quote-orange-w);
   background: var(--accent);
-  border-radius: 12px 0 0 12px;
+  border-radius: 16px 12px 12px 16px;
 }
 
 .heroQuote p {
