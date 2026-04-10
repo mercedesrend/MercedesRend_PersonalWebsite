@@ -376,20 +376,22 @@ export default function Page() {
         </div>
 
         <aside className={styles.heroRight} aria-label="Highlights">
-          <div className={styles.heroStats}>
-            {heroStats.map((stat) => (
-              <div key={stat.label} className={styles.stat}>
-                <div className={styles.statNumber}>{stat.value}</div>
-                <div className={styles.statLabel}>{stat.label}</div>
-              </div>
-            ))}
+          <div className={styles.heroRightInner}>
+            <div className={styles.heroStats}>
+              {heroStats.map((stat) => (
+                <div key={stat.label} className={styles.stat}>
+                  <div className={styles.statNumber}>{stat.value}</div>
+                  <div className={styles.statLabel}>{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            <blockquote className={styles.heroQuote}>
+              <p>
+                &quot;The gap isn&apos;t ability. It&apos;s access to the right information, at the right
+                time, with someone still there when things get hard.&quot;
+              </p>
+            </blockquote>
           </div>
-          <blockquote className={styles.heroQuote}>
-            <p>
-              &quot;The gap isn&apos;t ability. It&apos;s access to the right information, at the right
-              time, with someone still there when things get hard.&quot;
-            </p>
-          </blockquote>
         </aside>
       </section>
 

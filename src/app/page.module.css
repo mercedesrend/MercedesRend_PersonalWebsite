@@ -76,16 +76,19 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-items: center;
-  padding-top: 80px;
+  align-items: start;
+  padding-top: 5.25rem;
 }
 
 .heroLeft {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 5rem 3.5rem;
-  max-width: 760px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4.25rem 3.5rem 5rem;
+  width: 100%;
+  max-width: 720px;
+  justify-self: center;
 }
 
 .heroLeft > * {
@@ -110,8 +113,11 @@
 .heroTop {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 0.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem 2.5rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
 }
 
 .headshotFrame {
@@ -184,8 +190,11 @@
   font-weight: 300;
   color: var(--ink-light);
   line-height: 1.75;
-  max-width: 680px;
-  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 38rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  align-self: center;
 }
 
 .heroCtas,
@@ -197,7 +206,9 @@
 
 .heroCtas {
   gap: 1rem;
-  align-items: center;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
 }
 
 .buttonPrimary,
@@ -206,6 +217,7 @@
   align-items: center;
   justify-content: center;
   min-width: 170px;
+  min-height: 46px;
   padding: 0.75rem 1.75rem;
   font-size: 13px;
   font-weight: 400;
@@ -213,6 +225,8 @@
   text-decoration: none;
   border-radius: 2px;
   transition: all 0.2s;
+  box-sizing: border-box;
+  line-height: 1.2;
 }
 
 .buttonPrimary {
@@ -240,12 +254,23 @@
   background: var(--accent-soft);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 5rem 3.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4.25rem 3.5rem 5rem;
   position: relative;
   overflow: hidden;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.5s forwards;
+}
+
+.heroRightInner {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
 }
 
 .heroRight::before {
@@ -262,10 +287,8 @@
 .heroStats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
   gap: 1.25rem;
-  position: relative;
-  z-index: 1;
+  width: 100%;
 }
 
 .stat,
@@ -286,10 +309,11 @@
 
 .stat {
   padding: 1.25rem;
-  min-height: 116px;
+  min-height: 118px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .statNumber {
@@ -318,14 +342,14 @@
 }
 
 .heroQuote {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
+  margin: 0;
+  padding: 1.25rem 1.25rem 1.25rem 1.35rem;
   background: var(--warm-white);
-  border-left: 2px solid var(--accent);
-  border-radius: 0 4px 4px 0;
-  position: relative;
-  z-index: 1;
-  max-width: 100%;
+  border: 0.5px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .heroQuote p {
@@ -386,7 +410,7 @@
 }
 
 .storyGrid {
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -1054,6 +1078,11 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
     max-width: none;
+    justify-self: stretch;
+  }
+
+  .heroBio {
+    text-align: center;
   }
 
   .heroTop {
