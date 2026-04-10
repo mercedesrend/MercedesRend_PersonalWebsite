@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { DM_Sans, Lora } from "next/font/google";
 import styles from "./page.module.css";
 
@@ -341,14 +340,15 @@ export default function Page() {
         <div className={styles.heroLeft}>
           <div className={styles.heroTop}>
             <div className={styles.headshotFrame}>
-              <Image
+              {/* Plain img: avoids Next/Image + flex/aspect-ratio sizing edge cases; file is in /public */}
+              <img
                 src="/mercedes-rend-headshot.png"
                 alt="Mercedes Rend"
                 width={961}
                 height={1024}
                 className={styles.headshotImage}
-                priority
-                sizes="(max-width: 768px) 160px, 200px"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
             <div className={styles.heroTitleBlock}>
