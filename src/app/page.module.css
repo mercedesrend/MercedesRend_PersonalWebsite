@@ -100,6 +100,7 @@
   padding-inline: var(--page-pad-x);
   box-sizing: border-box;
   column-gap: 2rem;
+  overflow: visible;
 }
 
 .heroLeft {
@@ -228,7 +229,7 @@
 .heroCtas {
   gap: 1rem;
   align-items: stretch;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 38rem;
   width: 100%;
 }
@@ -280,9 +281,14 @@
   align-items: center;
   padding: 2.85rem 0 3rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.5s forwards;
+  /* Bleed peach panel to the viewport on the right; round only the inner (left) edge */
+  border-radius: 22px 0 0 22px;
+  margin-right: calc(-1 * (max(0px, (100vw - var(--content-max)) / 2) + var(--page-pad-x)));
+  padding-right: calc(max(0px, (100vw - var(--content-max)) / 2) + var(--page-pad-x));
+  box-sizing: border-box;
 }
 
 .heroRightInner {
@@ -298,12 +304,13 @@
 .heroRight::before {
   content: "";
   position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 300px;
-  height: 300px;
+  top: -48px;
+  right: 0;
+  width: min(320px, 55vw);
+  height: min(320px, 55vw);
   border-radius: 999px;
-  background: rgb(196 98 45 / 8%);
+  background: rgb(196 98 45 / 10%);
+  pointer-events: none;
 }
 
 .heroStats {
@@ -365,7 +372,7 @@
 
 .heroQuote {
   margin: 0;
-  padding: 1.65rem 1.35rem 1.35rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -375,18 +382,16 @@
   position: relative;
 }
 
-/* Full-width rounded orange band (spans edge to edge inside the card) */
+/* Quote: slim left accent only — main orange lives in the right hero panel */
 .heroQuote::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  right: 0;
-  width: 100%;
-  height: 12px;
+  bottom: 0;
+  width: 5px;
   background: var(--accent);
-  border-radius: 11px 11px 10px 10px;
-  box-shadow: inset 0 -1px 0 rgb(26 24 20 / 6%);
+  border-radius: 12px 0 0 12px;
 }
 
 .heroQuote p {
