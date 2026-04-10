@@ -638,10 +638,16 @@
 }
 
 .projectSecondaryLink {
-  margin-top: auto;
-  padding-top: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
   font-style: italic;
   opacity: 0.5;
+}
+
+/* Featured STRIDE: keep URL tight under “Live and deployed.” */
+.featuredProject > div:nth-child(2) > .projectDesc:first-of-type {
+  margin-bottom: 0.4rem;
 }
 
 .projectCard > div {
