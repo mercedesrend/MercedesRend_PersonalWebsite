@@ -277,7 +277,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
   padding: 2.85rem 0 3rem;
   position: relative;
   overflow: hidden;
@@ -287,7 +287,7 @@
 
 .heroRightInner {
   width: 100%;
-  max-width: none;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -366,7 +366,7 @@
 .heroQuote {
   --quote-accent-w: 6px;
   margin: 0;
-  padding: 1.25rem 1.25rem 1.25rem calc(var(--quote-accent-w) + 1.15rem);
+  padding: 1.25rem calc(1.2rem + var(--quote-accent-w)) 1.25rem 1.25rem;
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -376,16 +376,14 @@
   position: relative;
 }
 
-/* Full-height left accent: flush top–bottom with the card (padding box), follows corner radius */
-.heroQuote::before {
+/* Right accent: full card height (top→bottom), matches card’s right corners */
+.heroQuote::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0 0 0 auto;
   width: var(--quote-accent-w);
   background: var(--accent);
-  border-radius: 12px 0 0 12px;
+  border-radius: 0 12px 12px 0;
   z-index: 0;
   pointer-events: none;
 }
