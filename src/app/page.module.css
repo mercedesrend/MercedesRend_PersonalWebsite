@@ -416,6 +416,10 @@
   align-items: start;
 }
 
+.projectsGrid {
+  align-items: start;
+}
+
 .storyText p,
 .expDesc,
 .contactCopy {
@@ -563,7 +567,7 @@
 
 .projectsGrid {
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .projectCard {
@@ -573,7 +577,7 @@
   flex-direction: column;
   transition: border-color 0.2s, transform 0.2s;
   position: relative;
-  min-height: 100%;
+  min-height: 0;
   border-radius: 10px;
 }
 
@@ -588,11 +592,38 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.25rem;
-  padding: 2.25rem;
+  padding: 2.25rem 3rem;
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 10px;
   align-items: start;
+  color: var(--ink);
+  margin-left: -3rem;
+  margin-right: -3rem;
+  width: calc(100% + 6rem);
+  max-width: none;
+}
+
+.featuredProject .projectName {
+  color: var(--ink);
+}
+
+.featuredProject .projectDesc {
+  color: var(--ink-light);
+}
+
+.featuredProject .pill {
+  border-color: var(--border);
+  color: var(--ink-muted);
+}
+
+.featuredProject .projectArrow {
+  color: var(--ink-muted);
+}
+
+.featuredProject .projectSecondaryLink {
+  color: var(--ink-light);
+  opacity: 0.7;
 }
 
 .projectTag {
@@ -657,7 +688,7 @@
 .projectCard > div {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 0;
 }
 
 .projectPills,
@@ -1158,7 +1189,11 @@
 
   .featuredProject {
     grid-column: auto;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    width: calc(100% + 3rem);
+    max-width: none;
   }
 
   .contactLinks {
