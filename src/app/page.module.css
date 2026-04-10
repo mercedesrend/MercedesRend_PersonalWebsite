@@ -456,7 +456,8 @@
 }
 
 .backgroundRibbon,
-.outcomesSection {
+.outcomesSection,
+.honorsSection {
   padding: 4rem 3rem;
 }
 
@@ -464,7 +465,8 @@
   background: var(--ink);
 }
 
-.outcomesSection {
+.outcomesSection,
+.honorsSection {
   background: var(--ink);
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -823,6 +825,25 @@
   color: var(--ink-muted);
 }
 
+.honorsSection .honorCard {
+  background: rgb(255 255 255 / 7%);
+  border: 0.5px solid rgb(255 255 255 / 10%);
+}
+
+.honorsSection .honorName {
+  color: var(--cream);
+}
+
+.honorsSection .honorIssuer {
+  color: rgb(220 140 90 / 95%);
+}
+
+.honorsSection .honorDesc {
+  color: rgb(253 252 250 / 58%);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .skillsBelt {
   display: flex;
   flex-direction: column;
@@ -1048,6 +1069,7 @@
   .sectionWrap,
   .backgroundRibbon,
   .outcomesSection,
+  .honorsSection,
   .contactSection {
     padding-left: 1.5rem;
     padding-right: 1.5rem;

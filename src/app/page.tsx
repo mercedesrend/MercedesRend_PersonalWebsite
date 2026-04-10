@@ -570,19 +570,21 @@ export default function Page() {
         </div>
       </section>
 
-      <div className={styles.divider} />
-
-      <section id="honors" className={styles.sectionWrap}>
-        <div className={styles.sectionLabel}>Honors &amp; Recognition</div>
-        <h2 className={styles.sectionTitle}>Scholarships &amp; awards</h2>
-        <div className={styles.honorsGrid}>
-          {honors.map((honor) => (
-            <div key={honor.name} className={styles.honorCard}>
-              <div className={styles.honorName}>{honor.name}</div>
-              <div className={styles.honorIssuer}>{honor.issuer}</div>
-              <div className={styles.honorDesc}>{honor.description}</div>
-            </div>
-          ))}
+      <section id="honors" className={styles.honorsSection}>
+        <div className={styles.outcomesInner}>
+          <div className={styles.ribbonLabel}>Honors &amp; Recognition</div>
+          <h2 className={`${styles.sectionTitle} ${styles.darkSectionTitle}`}>
+            Scholarships &amp; awards
+          </h2>
+          <div className={styles.honorsGrid}>
+            {honors.map((honor) => (
+              <div key={honor.name} className={styles.honorCard}>
+                <div className={styles.honorName}>{honor.name}</div>
+                <div className={styles.honorIssuer}>{honor.issuer}</div>
+                <div className={styles.honorDesc}>{honor.description}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
