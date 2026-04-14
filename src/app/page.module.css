@@ -93,7 +93,8 @@
   flex-direction: row;
   align-items: stretch;
   gap: 2rem;
-  padding-top: 4.65rem;
+  /* Nav clearance only — column padding lives on .heroLeft / .heroRight */
+  padding-top: 4.25rem;
   padding-bottom: 2.75rem;
   max-width: var(--content-max);
   margin-inline: auto;
@@ -110,8 +111,9 @@
   align-items: stretch;
   flex: 1.05 1 0;
   min-width: 0;
-  padding: 2.85rem 0 3rem;
   max-width: 760px;
+  /* Top spacing comes from .hero padding (nav offset); avoid double padding */
+  padding: 0 0 3rem;
 }
 
 .heroLeft > * {
@@ -283,7 +285,7 @@
   flex: 0.95 1 0;
   min-width: 0;
   min-height: 0;
-  padding: 2.85rem 0 3rem;
+  padding: 0 0 3rem;
   position: relative;
   overflow: visible;
   opacity: 0;
@@ -428,6 +430,17 @@
 
 .sectionWrap {
   padding: var(--section-pad-y) var(--page-pad-x);
+  /* Blockify children so .sectionLabel isn’t an inline-block in a tall line box (inherited
+     line-height from .page was adding ~40–70px of empty space under the small caps label). */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sectionWrap > .sectionLabel {
+  display: block;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
 }
 
 .sectionTitle {
@@ -435,7 +448,13 @@
   font-weight: 400;
   color: var(--ink);
   line-height: 1.2;
+  margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.sectionWrap > .sectionTitle {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .sectionIntro {
@@ -770,10 +789,10 @@
 }
 
 .skillsTitle {
-  font-size: clamp(1.95rem, 3.6vw, 3rem);
-  line-height: 1.12;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.08;
   margin-bottom: 0.55rem;
-  max-width: 900px;
+  max-width: 58rem;
 }
 
 .skillsSection .sectionLabel {
@@ -784,9 +803,20 @@
 .skillsSection .skillsTitle,
 .skillsSection .skillsIntro,
 .skillsSection .skillsBelt {
-  max-width: 48rem;
   margin-inline: 0;
   width: 100%;
+}
+
+.skillsSection .skillsTitle {
+  max-width: 58rem;
+}
+
+.skillsSection .skillsIntro {
+  max-width: 52rem;
+}
+
+.skillsSection .skillsBelt {
+  max-width: 76rem;
 }
 
 .skillsSection .skillsIntro {
@@ -1134,7 +1164,7 @@
   }
 
   .heroLeft {
-    padding-top: 3rem;
+    padding-top: 1rem;
     padding-bottom: 2.75rem;
     max-width: none;
   }
