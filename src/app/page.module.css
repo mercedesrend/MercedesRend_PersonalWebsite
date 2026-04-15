@@ -113,7 +113,7 @@
   min-width: 0;
   max-width: 760px;
   /* Top spacing comes from .hero padding (nav offset); avoid double padding */
-  padding: 0 0 3rem;
+  padding: 0.65rem 0 3rem;
 }
 
 .heroLeft > * {
