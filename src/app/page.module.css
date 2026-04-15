@@ -299,6 +299,7 @@
 .heroRightInner {
   width: 100%;
   max-width: 420px;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
