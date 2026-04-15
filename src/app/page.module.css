@@ -301,7 +301,7 @@
   max-width: 420px;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.9rem;
   position: relative;
   z-index: 1;
 }
@@ -320,7 +320,7 @@
 .heroStats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -377,7 +377,7 @@
 .heroQuote {
   --quote-accent-w: 6px;
   margin: 0;
-  padding: 1.25rem 1.25rem 1.25rem calc(1.2rem + var(--quote-accent-w));
+  padding: 1.05rem 1.1rem 1.05rem calc(1rem + var(--quote-accent-w));
   background: var(--warm-white);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -407,7 +407,7 @@
   font-style: italic;
   font-size: 15px;
   color: var(--ink-light);
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0;
 }
 
