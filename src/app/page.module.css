@@ -94,7 +94,7 @@
   align-items: stretch;
   gap: 2rem;
   /* Nav clearance only — column padding lives on .heroLeft / .heroRight */
-  padding-top: 4.25rem;
+  padding-top: 5.4rem;
   padding-bottom: 2.75rem;
   max-width: var(--content-max);
   margin-inline: auto;
