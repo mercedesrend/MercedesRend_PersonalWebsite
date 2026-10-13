@@ -1,17 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #f7f4ef;
-  overflow-x: clip;
-}
-
-a {
-  color: inherit;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f6f7f8; overflow-x: clip; }
+a { color: inherit; }
